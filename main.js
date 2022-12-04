@@ -30,6 +30,8 @@ function pickUpItem(type){
         keyCase.classList.add('nonShow')
         SKeyCase = true
         textFeild.innerHTML = 'Ohhhhhhh what a nice case, looks solid. Just need a screwdriver and switches'
+        localStorage.setItem('item1', 'case')
+        console.log(localStorage.getItem('item1'))
 
     }else if(type === 'screw'){
         i2.innerHTML = '<img id="hScrewdriver" src="img/screwdriverItem.svg" alt="screwdriver">'
@@ -63,6 +65,8 @@ function typePassword(inNum){
 
 
 async function desk(){
+    
+
     if(SKeyCase === false){
         keyCase.addEventListener('click',() => pickUpItem('case'))
     }else if(SKeyCase === true){
@@ -73,6 +77,7 @@ async function desk(){
 }
 desk();
 async function computer(){
+
     if(Dpassword === false){
         p1.addEventListener('click',() => typePassword('1'))
         p2.addEventListener('click',() => typePassword('2'))
@@ -82,7 +87,15 @@ async function computer(){
     
 }
 computer();
+
+
+
 async function hole(){
+
+    if(localStorage.getItem('item1') === 'case'){
+        console.log(localStorage.getItem('item1') === 'case')
+    }
+
     if(SScrewdriver === false){
         screwdriver.addEventListener('click',() => pickUpItem('screw'))
     }else if(SScrewdriver === true){
