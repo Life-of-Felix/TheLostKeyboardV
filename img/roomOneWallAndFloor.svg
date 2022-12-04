@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="wall_and_floor" data-name="wall and floor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1923.19 1082.07">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: gray;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4 {
+        stroke: #000;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-2 {
+        fill: #999;
+      }
+
+      .cls-3 {
+        fill: #c4c4c4;
+      }
+
+      .cls-4 {
+        fill: #e0e0e0;
+      }
+    </style>
+  </defs>
+  <polygon class="cls-3" points="1.53 1080.62 201.53 934.74 201.53 .5 1.53 .5 1.53 1080.62"/>
+  <polygon class="cls-4" points="1921.65 1081.09 1721.65 935.21 1721.65 .62 1921.53 .62 1921.65 1081.09"/>
+  <polygon class="cls-1" points="961.53 934.97 961.59 1081.09 501.53 1080.62 588.71 934.74 961.53 934.97"/>
+  <polygon class="cls-2" points="961.87 935.21 961.81 1081.32 1421.87 1080.85 1334.69 934.97 961.87 935.21"/>
+  <polygon class="cls-2" points="201.53 934.74 1.53 1080.62 501.53 1080.62 588.71 934.74 201.53 934.74"/>
+  <path class="cls-1" d="M1334.69,934.97s80.01,145.62,87.18,145.88,499.78,.24,499.78,.24l-200-145.88-386.96-.24Z"/>
+</svg>

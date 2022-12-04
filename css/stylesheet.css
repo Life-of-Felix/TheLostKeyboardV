@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Syne+Mono&display=swap');
+	:root{
+		--whiteText: rgb(230, 230, 215);
+		--codeGreen: rgb(32, 100, 56);
+		--headerHeight: 30vh;
+		--playAreaSize: 70rem;
+		--codeGrey: rgb(121, 121, 121) ;
+	}
+    *{
+        padding: 0%;
+        margin: 0%;
+    }
+	p, h2, h3, li{
+		font-family: 'IBM Plex Mono', monospace;
+	}
+	.nonShow{
+		display: none !important;
+	}
+	.wrap{
+		display: grid;
+		height: 100vh;
+		width: 100vw;
+		grid-template-columns: 100%;
+		grid-template-rows: var(--headerHeight) calc(100vh - var(--headerHeight));
+		grid-template-areas:
+		"tb"
+		"mg"
+		;
+	}
+	header{
+		grid-area: tb;
+		background-color: black;
+		display: grid;
+		grid-template-columns: auto var(--headerHeight);
+        grid-template-rows: 1fr;
+	}
+	header p{
+		color: var(--whiteText);
+		font-size: 2em;
+		margin: 1%;
+		text-transform: uppercase;
+	}
+	.itemWin{
+		border: solid var(--whiteText);
+		width: 90%;
+        justify-self: center;
+		
+	}
+	.itemWin ul{
+		margin: 0%;
+		padding: 0%;
+		display: grid;
+		height: 100%;
+		width: 100%;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr 1fr;
+		list-style: none;
+	}
+	.itemWin ul li{
+		margin: 5%;
+		border: dotted var(--whiteText) ;
+		color: var(--whiteText);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+    .itemWin ul li img{
+        width: 90%;
+    }
+
+	main{
+		grid-area: mg;
+		background-color: var(--whiteText);
+		display: flex;
+		justify-content: center;
+		width: 100%;
+		height: calc(100vh - var(--headerHeight));
+		background-color: var(--codeGreen);
+    
+	}
+    .centerPA{
+
+        margin-top: 1%;
+    }
+	#sceneDesk , .desktopSetup, .insideHole {
+		
+		width: 100%;
+		height: 100%;
+		display: grid;
+		grid-template-rows: 1fr;
+		grid-template-columns: 1fr;
+		grid-template-areas:
+		'gpa'
+		;
+		max-height: calc(100vh - var(--headerHeight) );
+	}
+
+
+
+	#backImg{
+		grid-area: gpa;
+		z-index: 0;
+		width: var(--playAreaSize);
+	}
+	.overlayDesk{
+		grid-area: gpa;
+		width: var(--playAreaSize);
+		display: grid;
+		grid-template-columns:1fr 2fr 2fr 2fr 1fr;
+		grid-template-rows: 20% 20% 20% 10%;
+		grid-template-areas:
+		".  .  ar .  . "
+		".  ca ca  .  . "
+		".  .  .  .  ho"
+		".  .  .  .  . "
+		;
+
+	}
+	#arrowUp{
+		grid-area: ar;
+		z-index: 1;
+		width: 30%;
+        
+		margin-top: 1rem;
+		align-self: flex-start;
+		justify-self: center;
+	}
+	#case{
+		grid-area: ca;
+		z-index: 1;
+		height: 120%;
+		transform: rotate(-13deg);
+	}
+	#hole{
+		grid-area: ho;
+		z-index: 1;
+		height: 30%;
+        align-self: center;
+        margin: 10% 20%;
+	}
+	
+
+	.OverlayComputer{
+		grid-area: gpa;
+		top: var(--headerHeight);
+		width: var(--playAreaSize);
+		display: grid;
+		grid-template-columns: 1fr 1.3fr 1fr;
+		grid-template-rows: 11% 40% 22.5%;
+		grid-template-areas:
+		".  .  . "
+		".  ds . "
+		".  ar  . "
+		;
+	}
+	.passwordScreen{
+		grid-area: ds;
+		z-index: 1;
+		background-color: var(--codeGreen) ;
+		border-top: solid 1em var(--codeGrey);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+        gap: 10%;
+	}
+	.passwordBox h3{
+		color: var(--whiteText);
+		font-size: 1.5em;
+	}
+	.passwordBox h2{
+		background-color: var(--whiteText);
+		min-width: 4em;
+		height: 2em;
+		text-align: center;
+
+	}
+	.pinB{
+		list-style: none;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr 1fr;
+		grid-template-areas:
+		"fr se"
+		"th fo"
+		;
+		gap: 2em;
+		padding-inline-start: 0px;
+	}
+	.pinB li{
+		color: var(--whiteText);
+		z-index: 2;
+		align-self: center;
+		justify-self: center;
+		font-size: 2rem;
+		padding: 0.3em;
+		border: 0.1em dotted var(--whiteText);
+	}
+	.codeScreen{
+		grid-area: ds;
+		z-index: 1;
+		background-color: var(--codeGreen) ;
+		border-top: solid 1em var(--codeGrey);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+	}
+	.codeScreen h3{
+		color: var(--whiteText);
+		font-size: 1.5em;
+	}
+	.codeScreen h2{
+		color: var(--whiteText);
+		font-size: 3em;
+		border: solid 0.2em var(--whiteText);
+		padding: 0.2em;
+	}
+	#arrowDown{
+		grid-area: ar;
+		z-index: 1;
+		transform: rotate(180deg);
+		padding-top: 2vh;
+        align-self: center;
+        justify-self: center;
+        height: 20%;
+
+	}
+    #arrowDown img{
+        height: 100%;
+    }
+    .OverlayHole{
+        grid-area: gpa;
+        display: grid;
+        grid-template-columns: 1fr 8fr 1fr;
+        grid-template-rows: 15% 56% 15%;
+        grid-template-areas:
+        '.  ar co'
+        '.  ho . '
+        '.  .  . '
+        ;
+        z-index: 1;
+    }
+    #hArrowUp{
+        grid-area: ar;
+        width: 20%;
+        align-self: center;
+        justify-self: center;
+    }
+    #hScrewdriver{
+        grid-area: ho;
+        width: 50%;
+        align-self: center;
+        justify-self: center;
+        transform: rotate(10deg);
+    }
+    #hCode{
+        grid-area: co;
+        align-self: flex-end;
+        justify-self: baseline;
+        margin-right: 20%;
+        transform: rotate(25deg);
+    }
