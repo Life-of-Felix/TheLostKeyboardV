@@ -11,9 +11,8 @@ let winWin = document.querySelector('.winScreen')
 
 
 let keyCase = document.querySelector('#case')
-let SKeyCase = false
 let screwdriver = document.querySelector('#hScrewdriver')
-let SScrewdriver = false
+
 
 
 let p1 = document.querySelector('#pin1')
@@ -31,8 +30,10 @@ localStorage.setItem('Dpassword', false)
 
 function clearInv(){
     localStorage.clear();
-    console.log('yo its french')
-    desk()
+    console.log('cleared localStroage')
+    i1.innerHTML = '1'
+    i2.innerHTML = '2'
+    i3.innerHTML = '3'
 }
 i4.addEventListener('click',() => clearInv())
 
@@ -61,8 +62,6 @@ function pickUpItem(type){
         i1.classList.remove('selected')
         i2.classList.remove('selected')
         i3.classList.remove('selected')
-        i2.innerHTML = '2'
-        i3.innerHTML = '3'
         textFeild.innerHTML = 'What a nice keyboard! time to code with a mouse (Thier is no holes in the story here) '
         localStorage.setItem('item1','keyboard')
     }
