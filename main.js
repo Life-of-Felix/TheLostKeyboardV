@@ -7,7 +7,7 @@ let items = document.querySelectorAll('.itemWin ul li')
 let stateKeyboard = document.querySelector('#stateOfKeyboard')
 let codeBut = document.querySelector("#codeQmk")
 // win Window
-let winWin = document.querySelector('.inScreen')
+let winWin = document.querySelector('.winScreen')
 
 
 let keyCase = document.querySelector('#case')
@@ -73,6 +73,9 @@ function pickUpItem(type){
 let countPass = 3
 let guesses = 1
 function typePassword(inNum){
+
+
+    
     if(countPass === 3){
         if(passwordBox.innerHTML === '242'){
             passScreen.classList.add('nonShow')
@@ -106,20 +109,25 @@ i2.addEventListener('click', ()=>selectItem (i2))
 i3.addEventListener('click', ()=>selectItem (i3))
 
 
-codeBut.addEventListener('click',()=>codeing())
+
 
 function codeing(){
-    let num = Math.floor(Math.random() * 3)
-    if(num === 0){
-        winWin.classList.remove('nonShow')
-        passwordScreen.classList.add('nonShow')
-        passScreen.classList.add('nonShow')
-        
-        textFeild.innerHTML = "It works now! No more need for point and click games where pressing the 4 clear your items"
-        localStorage.clear()
+
+    if(localStorage.getItem('item1')=== 'keyboard'){
+        let num = Math.floor(Math.random() * 3)
+
+        if(num === 0){
+            winWin.classList.remove('nonShow')
+            passScreen.classList.add('nonShow')
+            textFeild.innerHTML = "It works now! No more need for point and click games where pressing the 4 clear your items"
+            localStorage.clear()
+        }else{
+            textFeild.innerHTML = "Darn the code didn't work this time, but let's try again"
+        } 
     }else{
-        textFeild.innerHTML = "Darn the code didn't work this time, but let's try again"
+        textFeild.innerHTML = "I can't code a keyboard without a keyboard, need to get a keyboard built"
     }
+    
 }
 
 async function desk(){
@@ -135,11 +143,17 @@ async function desk(){
 }
 desk();
 async function computer(){
+
+    if(localStorage.getItem('item1') === 'keyboard'){
+        stateKeyboard.innerHTML = 'Keyboard Detected'
+    }
+
     p1.addEventListener('click',() => typePassword('1'))
     p2.addEventListener('click',() => typePassword('2'))
     p3.addEventListener('click',() => typePassword('3'))
     p4.addEventListener('click',() => typePassword('4'))
     
+    codeBut.addEventListener('click',()=>codeing())
 }
 computer();
 
