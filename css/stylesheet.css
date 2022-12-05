@@ -5,6 +5,7 @@
 		--headerHeight: 30vh;
 		--playAreaSize: 70rem;
 		--codeGrey: rgb(121, 121, 121) ;
+		--selYel: rgb(239, 255, 62) ;
 	}
     *{
         padding: 0%;
@@ -15,6 +16,9 @@
 	}
 	.nonShow{
 		display: none !important;
+	}
+	.opa0{
+		opacity: 0%;
 	}
 	.wrap{
 		display: grid;
@@ -67,6 +71,9 @@
     .itemWin ul li img{
         width: 90%;
     }
+	.selected{
+		border:var(--selYel) outset 0.2em !important;
+	}
 
 	main{
 		grid-area: mg;
@@ -216,6 +223,18 @@
 		border: solid 0.2em var(--whiteText);
 		padding: 0.2em;
 	}
+	.winScreen{
+		grid-area: ds;
+		z-index: 1;
+		border-top: solid 1em var(--codeGrey);
+		background-color: var(--codeGreen) ;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.winScreen img{
+		height: 80%;
+	}
 	#arrowDown{
 		grid-area: ar;
 		z-index: 1;
@@ -254,6 +273,16 @@
         justify-self: center;
         transform: rotate(10deg);
     }
+	#switchH{
+		grid-area: ho;
+		width: 10%;
+		align-self: center;
+        justify-self: center;
+		transform: rotate(-25deg);
+	}
+	#switch{
+		width: 50%;
+	}
     #hCode{
         grid-area: co;
         align-self: flex-end;
